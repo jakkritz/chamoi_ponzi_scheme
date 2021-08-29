@@ -28,8 +28,9 @@ contract Campaign {
 		_; // placehoder for whatever function virtually pasted here
 	}
 
-	constructor(uint minimum) {
-		manager = msg.sender;
+	constructor(uint minimum, address campaignCreator) {
+		// manager = msg.sender; // Switch to use CampaignFactory
+		manager = campaignCreator;
 		minimumContribution = minimum;
 	}
 
